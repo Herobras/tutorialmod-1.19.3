@@ -1,6 +1,7 @@
 package net.herobras.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.herobras.tutorialmod.block.ModBlocks;
 import net.herobras.tutorialmod.item.ModCreativeModeTabs;
 import net.herobras.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -30,6 +31,7 @@ public class TutorialMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -50,9 +52,14 @@ public class TutorialMod
             event.accept(ModItems.RAW_BLACK_OPAL);
         }
 
+        if (event.getTab()== CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.BLACK_OPAL_BLOCK);
+        }
+
         if (event.getTab()== ModCreativeModeTabs.TUTORIAL_TAB){
             event.accept(ModItems.DOLLAR_BILL);
             event.accept(ModItems.RAW_BLACK_OPAL);
+            event.accept(ModItems.BLACK_OPAL);
         }
 
     }
