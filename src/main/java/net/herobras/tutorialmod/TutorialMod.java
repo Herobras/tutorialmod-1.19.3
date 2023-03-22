@@ -1,6 +1,9 @@
 package net.herobras.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.herobras.tutorialmod.item.ModCreativeModeTabs;
+import net.herobras.tutorialmod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -26,13 +29,12 @@ public class TutorialMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
+        ModItems.register(modEventBus);
 
-        // Register ourselves for server and other game events we are interested in
+        modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
+
         modEventBus.addListener(this::addCreative);
     }
 
@@ -43,6 +45,15 @@ public class TutorialMod
 
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
+        if (event.getTab()== CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.DOLLAR_BILL);
+            event.accept(ModItems.RAW_BLACK_OPAL);
+        }
+
+        if (event.getTab()== ModCreativeModeTabs.TUTORIAL_TAB){
+            event.accept(ModItems.DOLLAR_BILL);
+            event.accept(ModItems.RAW_BLACK_OPAL);
+        }
 
     }
 
