@@ -61,16 +61,16 @@ public class TutorialMod
             event.accept(ModItems.DOLLAR_BILL);
             event.accept(ModItems.RAW_BLACK_OPAL);
             event.accept(ModItems.BLACK_OPAL);
-            event.accept(ModBlocks.NETHERRACK_BLACK_OPAL_BLOCK);
-            event.accept(ModBlocks.ENDSTONE_BLACK_OPAL_BLOCK);
-            event.accept(ModBlocks.DEEPSLATE_BLACK_OPAL_BLOCK);
+            event.accept(ModBlocks.NETHERRACK_BLACK_OPAL_ORE);
+            event.accept(ModBlocks.ENDSTONE_BLACK_OPAL_ORE);
+            event.accept(ModBlocks.DEEPSLATE_BLACK_OPAL_ORE);
             event.accept(ModBlocks.BLACK_OPAL_ORE);
         }
 
         if(event.getTab() == CreativeModeTabs.NATURAL_BLOCKS){
-            event.accept(ModBlocks.NETHERRACK_BLACK_OPAL_BLOCK);
-            event.accept(ModBlocks.ENDSTONE_BLACK_OPAL_BLOCK);
-            event.accept(ModBlocks.DEEPSLATE_BLACK_OPAL_BLOCK);
+            event.accept(ModBlocks.NETHERRACK_BLACK_OPAL_ORE);
+            event.accept(ModBlocks.ENDSTONE_BLACK_OPAL_ORE);
+            event.accept(ModBlocks.DEEPSLATE_BLACK_OPAL_ORE);
             event.accept(ModBlocks.BLACK_OPAL_ORE);
         }
 
