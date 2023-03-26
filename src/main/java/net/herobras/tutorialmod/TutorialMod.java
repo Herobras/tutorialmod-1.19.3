@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.herobras.tutorialmod.block.ModBlocks;
 import net.herobras.tutorialmod.item.ModCreativeModeTabs;
 import net.herobras.tutorialmod.item.ModItems;
+import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -60,6 +61,17 @@ public class TutorialMod
             event.accept(ModItems.DOLLAR_BILL);
             event.accept(ModItems.RAW_BLACK_OPAL);
             event.accept(ModItems.BLACK_OPAL);
+            event.accept(ModBlocks.NETHERRACK_BLACK_OPAL_BLOCK);
+            event.accept(ModBlocks.ENDSTONE_BLACK_OPAL_BLOCK);
+            event.accept(ModBlocks.DEEPSLATE_BLACK_OPAL_BLOCK);
+            event.accept(ModBlocks.BLACK_OPAL_ORE);
+        }
+
+        if(event.getTab() == CreativeModeTabs.NATURAL_BLOCKS){
+            event.accept(ModBlocks.NETHERRACK_BLACK_OPAL_BLOCK);
+            event.accept(ModBlocks.ENDSTONE_BLACK_OPAL_BLOCK);
+            event.accept(ModBlocks.DEEPSLATE_BLACK_OPAL_BLOCK);
+            event.accept(ModBlocks.BLACK_OPAL_ORE);
         }
 
     }
